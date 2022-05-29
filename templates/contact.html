@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact {% endblock title %}Contact
+
+{% block body %}
+<div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="static\img\contactus.jpg" class="d-block w-100" alt="..." height="850">
+    </div>
+</div>
+<h1 class="text-center my-4"> Contact Us here</h1>
+<div class="container mb-4 my-6">
+<form method="post" action="/contact">
+    {% csrf_token %}
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address:</label>
+      <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp">
+    </div>
+    <div class="mb-3">
+        <label for="Phone" class="form-label">Phone Number:</label>
+        <input type="phone" class="form-control" id="phone" name="phone" aria-describedby="emailHelp">
+      </div>
+    <div class="mb-3">
+        <label for="desc" class="form-label">Why do you want to contact us?</label>
+        <textarea class="form-control" id="desc" name="desc" rows="3"></textarea>
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+{% endblock body %} 
